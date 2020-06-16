@@ -8,7 +8,7 @@ function App() {
 
   const [posts, setPosts] = useState([]);
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API}/`)
+    axios.get(`${process.env.REACT_APP_API}`)
       .then(({data:{mock_data: posts}})=> {
         setPosts(posts)
       })
@@ -16,6 +16,7 @@ function App() {
   
   return (
     <div className="App">
+        <h1>Hiii class</h1>
         {posts?
           posts.map((post,index)=> <Media key={`${post.title}-${index}`}{...post}/>)
           :
